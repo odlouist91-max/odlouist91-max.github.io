@@ -21,315 +21,112 @@
             --radius-small: 16px;
         }
 
-        * {
-            box-sizing: border-box;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+        * { box-sizing: border-box; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-clean);
             color: var(--text-dark);
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             -webkit-font-smoothing: antialiased;
             position: relative;
         }
 
-        /* --- ФИКС ГРАДИЕНТОВ (АУРЫ) --- */
-        /* Теперь это реальные фиксированные фоновые слои */
-        .aura-1 {
-            position: fixed;
-            top: -150px;
-            right: -150px;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(191,255,0,0.25) 0%, rgba(255,255,255,0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
+        /* Фоновые ауры и сетка */
+        .aura-1 { position: fixed; top: -150px; right: -150px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(191,255,0,0.22) 0%, rgba(255,255,255,0) 70%); z-index: -1; pointer-events: none; }
+        .aura-2 { position: fixed; bottom: -150px; left: -200px; width: 800px; height: 800px; background: radial-gradient(circle, rgba(0,34,255,0.08) 0%, rgba(255,255,255,0) 70%); z-index: -1; pointer-events: none; }
+        .bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(to right, var(--border-thin) 1px, transparent 1px), linear-gradient(to bottom, var(--border-thin) 1px, transparent 1px); background-size: 100px 100px; z-index: -2; pointer-events: none; }
 
-        .aura-2 {
-            position: fixed;
-            bottom: -150px;
-            left: -200px;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(0,34,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; }
 
-        /* Технологичная сетка */
-        .bg-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(to right, var(--border-thin) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--border-thin) 1px, transparent 1px);
-            background-size: 100px 100px;
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-        }
-
-        /* --- НАВИГАЦИЯ --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 0;
-        }
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.4rem; 
-            letter-spacing: -0.03em; 
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .logo::before {
-            content: "";
-            width: 12px;
-            height: 12px;
-            background: var(--brand-blue);
-            border-radius: 50%;
-        }
+        /* Навигация */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; }
+        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.03em; display: flex; align-items: center; gap: 8px; }
+        .logo::before { content: ""; width: 12px; height: 12px; background: var(--brand-blue); border-radius: 50%; }
         .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 30px; font-size: 0.95rem; font-weight: 500; }
         .nav-cta { background: var(--text-dark); color: white !important; padding: 12px 26px; border-radius: 30px; }
         .nav-cta:hover { background: var(--brand-blue); color: white !important; }
 
-        /* --- БЛОК ОБО МНЕ --- */
-        .hero-section {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 80px;
-            align-items: center;
-            padding: 80px 0 120px 0;
-        }
-        .hero-content h1 {
-            font-size: 4.2rem;
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.05em;
-            margin: 0 0 28px 0;
-        }
-        .highlight-word {
-            background: var(--brand-lime);
-            padding: 0 12px;
-            border-radius: 12px;
-            display: inline-block;
-            transform: rotate(-1deg);
-        }
-        .hero-content p {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            color: #222;
-            margin-bottom: 48px;
-            max-width: 600px;
-        }
-        .social-links a {
-            display: inline-block;
-            margin-right: 15px;
-            text-decoration: none;
-            color: var(--text-dark);
-            background: white;
-            padding: 14px 28px;
-            border-radius: 40px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: 1px solid var(--text-dark);
-        }
-        .social-links a:hover {
-            background: var(--text-dark);
-            color: white;
-            transform: scale(1.05);
-        }
-        
-        .hero-image {
-            width: 100%;
-            height: 520px;
-            background: #e5e5e5;
-            border-radius: var(--radius-large);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border: 1px solid var(--text-dark);
-            box-shadow: 20px 20px 0px var(--brand-blue);
-        }
+        /* Блок Обо мне */
+        .hero-section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; padding: 60px 0 40px 0; }
+        .hero-content h1 { font-size: 4.2rem; font-weight: 800; line-height: 1.05; letter-spacing: -0.05em; margin: 0 0 28px 0; }
+        .highlight-word { background: var(--brand-lime); padding: 0 12px; border-radius: 12px; display: inline-block; transform: rotate(-1deg); }
+        .hero-content p { font-size: 1.3rem; line-height: 1.6; color: #222; margin-bottom: 48px; max-width: 600px; }
+        .social-links a { display: inline-block; margin-right: 15px; text-decoration: none; color: var(--text-dark); background: white; padding: 14px 28px; border-radius: 40px; font-size: 0.95rem; font-weight: 600; border: 1px solid var(--text-dark); }
+        .social-links a:hover { background: var(--text-dark); color: white; transform: scale(1.05); }
+        .hero-image { width: 100%; height: 480px; background: #e5e5e5; border-radius: var(--radius-large); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.9rem; border: 1px solid var(--text-dark); box-shadow: 20px 20px 0px var(--brand-blue); }
 
-        /* --- БЛОК ЧТО Я УМЕЮ --- */
-        .skills-section {
-            padding: 120px 0;
-        }
-        .section-title {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--text-muted);
-            margin-bottom: 60px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background: var(--brand-lime);
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .skill-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-thin);
-            padding: 48px 40px;
-            border-radius: var(--radius-large);
-            position: relative;
-        }
-        .skill-card:hover {
-            background: var(--brand-blue);
-            color: white;
-            border-color: var(--brand-blue);
-            transform: translateY(-8px);
-        }
-        .skill-card h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 0 20px 0;
-            letter-spacing: -0.03em;
-        }
-        .skill-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin: 0;
-        }
+        /* Блок Логотипов */
+        .companies-bar { padding: 40px 0 80px 0; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; border-bottom: 1px solid var(--border-thin); }
+        .companies-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700; width: 100%; margin-bottom: 5px; }
+        .company-name { font-size: 1.3rem; font-weight: 700; color: #bcbcbc; letter-spacing: -0.02em; }
+        .company-name:hover { color: var(--text-dark); }
+
+        /* Экспертиза */
+        .skills-section { padding: 100px 0; }
+        .section-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); margin-bottom: 48px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .section-title::before { content: ""; width: 8px; height: 8px; background: var(--brand-lime); }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
+        .skill-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--border-thin); padding: 40px; border-radius: var(--radius-large); position: relative; }
+        .skill-card:hover { background: var(--brand-blue); color: white; border-color: var(--brand-blue); transform: translateY(-8px); }
+        .skill-card h3 { font-size: 1.8rem; font-weight: 800; margin: 0 0 16px 0; letter-spacing: -0.03em; }
+        .skill-card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0; }
         .skill-card:hover p { color: rgba(255,255,255,0.8); }
+        .skill-card::after { content: "↓"; position: absolute; bottom: 30px; right: 30px; font-size: 1.3rem; font-weight: 300; color: var(--brand-blue); opacity: 0.3; }
+        .skill-card:hover::after { color: var(--brand-lime); opacity: 1; transform: rotate(-135deg); }
+
+        .tools-container { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: #ffffff; padding: 20px 30px; border-radius: var(--radius-small); border: 1px solid var(--border-thin); }
+        .tools-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-right: 15px; }
+        .tool-tag { font-size: 0.8rem; font-weight: 600; padding: 6px 14px; background: #f1f1f1; border-radius: 8px; color: var(--text-dark); }
+
+        /* Сетка Кейсов */
+        .cases-section { padding: 80px 0; border-top: 1px solid var(--border-thin); }
+        .section-subtitle-text { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; margin-top: -30px; margin-bottom: 50px; }
+        .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; }
         
-        .skill-card::after {
-            content: "↓";
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--brand-blue);
-            opacity: 0.3;
+        .case-card { background: #ffffff; border: 1px solid var(--border-thin); border-radius: var(--radius-large); overflow: hidden; display: flex; flex-direction: column; position: relative; }
+        .case-media-container { width: 100%; height: 320px; background: #f1f3f5; border-bottom: 1px solid var(--border-thin); overflow: hidden; position: relative; }
+        .case-iframe { width: 100%; height: 100%; border: none; }
+        .case-video { width: 100%; height: 100%; object-fit: cover; }
+        .case-card::before { content: "PROJECT"; position: absolute; top: 25px; left: 25px; background: var(--text-dark); color: white; font-size: 0.65rem; font-weight: 700; padding: 6px 12px; letter-spacing: 0.1em; border-radius: 6px; z-index: 10; pointer-events: none;}
+        
+        .case-info { padding: 40px; }
+        .case-info h4 { font-size: 1.6rem; font-weight: 800; margin: 0 0 12px 0; letter-spacing: -0.03em; }
+        .case-info p { font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0 0 24px 0; }
+        .tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+        .tag { font-size: 0.75rem; font-weight: 600; padding: 6px 14px; background: #f1f1f1; border-radius: 30px; color: #444; }
+        
+        /* СТИЛИ ДЛЯ ВСПЛЫВАЮЩИХ ДЕТАЛЕЙ (АККОРДЕОН) */
+        .details-btn {
+            background: none; border: 1px solid var(--text-dark); color: var(--text-dark);
+            padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;
+            cursor: pointer; display: inline-flex; align-items: center; gap: 8px; width: max-content;
         }
-        .skill-card:hover::after { 
-            color: var(--brand-lime);
-            opacity: 1;
-            transform: rotate(-135deg);
+        .details-btn:hover { background: var(--text-dark); color: white; }
+        
+        .case-details-content {
+            display: none; 
+            padding-top: 30px; margin-top: 30px;
+            border-top: 1px dashed var(--border-thin);
         }
+        .case-details-content h5 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-blue); margin: 0 0 8px 0; font-weight: 700; }
+        .case-details-content p { font-size: 0.95rem; color: #333; margin-bottom: 20px; line-height: 1.5; }
 
-        /* --- БЛОК КЕЙСОВ --- */
-        .cases-section {
-            padding: 120px 0;
-        }
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
-        }
-        .case-card {
-            background: #ffffff;
-            border: 1px solid var(--border-thin);
-            border-radius: var(--radius-large);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .case-image-stub {
-            height: 300px;
-            background: #f1f3f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            position: relative;
-        }
-        .case-card::before {
-            content: "PROJECT";
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            background: var(--text-dark);
-            color: white;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 6px 12px;
-            letter-spacing: 0.1em;
-            border-radius: 6px;
-            z-index: 1;
-        }
-        .case-info {
-            padding: 44px;
-        }
-        .case-info h4 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin: 0 0 16px 0;
-            letter-spacing: -0.03em;
-        }
-        .case-info p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin: 0 0 32px 0;
-        }
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tag {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 8px 16px;
-            background: #f1f1f1;
-            border-radius: 30px;
-            color: #444;
-        }
-        .case-card:hover {
-            border-color: var(--text-dark);
-            box-shadow: 0 30px 60px rgba(0,34,255,0.05);
-            transform: translateY(-4px);
-        }
+        .case-card.active .case-details-content { display: block; }
+        .case-card.active { border-color: var(--text-dark); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
 
-        /* Адаптивность */
         @media (max-width: 992px) {
             .hero-section, .skills-grid, .cases-grid { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 3.2rem; }
             .hero-image { height: 380px; box-shadow: 12px 12px 0px var(--brand-blue); }
+            .case-media-container { height: 240px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- НОВЫЕ СЛОИ ДЛЯ ГРАДИЕНТОВ -->
     <div class="aura-1"></div>
     <div class="aura-2"></div>
-    
-    <!-- Графическая сетка -->
     <div class="bg-grid"></div>
 
     <div class="container">
@@ -337,21 +134,20 @@
         <nav>
             <div class="logo">MONICA.DEV</div>
             <div class="nav-links">
-                <a href="#about">Обо мне</a>
-                <a href="#skills">Навыки</a>
-                <a href="#projects">Кейсы</a>
+                <a href="#skills">Экспертиза</a>
+                <a href="#courses">Примеры курсов</a>
+                <a href="#systems">Системные проекты</a>
                 <a href="https://t.me/your_telegram" class="nav-cta">Связаться</a>
             </div>
         </nav>
 
-        <!-- Блок "Обо мне" -->
+        <!-- Hero -->
         <section class="hero-section" id="about">
             <div class="hero-content">
                 <h1>Привет!<br>Меня зовут <span class="highlight-word">Моника.</span></h1>
                 <p>Я занимаюсь дизайном и разработкой интерактивных курсов, лонгридов и сложных образовательных систем. Сочетаю глубокую методологию обучения с чистым UI/UX дизайном и автоматизацией на базе корпоративных LMS.</p>
                 <div class="social-links">
                     <a href="https://t.me/your_telegram" target="_blank">Telegram</a>
-                    <a href="mailto:your_email@example.com">Email</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -359,82 +155,142 @@
             </div>
         </section>
 
-        <!-- Блок "Что я умею" -->
+        <!-- Бренды -->
+        <div class="companies-bar">
+            <div class="companies-title">Опыт сотрудничества и разработки для компаний</div>
+            <div class="company-name">Магнит</div>
+            <div class="company-name">Ozon</div>
+            <div class="company-name">Samsung</div>
+            <div class="company-name">Р-Фарм</div>
+            <div class="company-name">Еврохим</div>
+            <div class="company-name">SuperStep</div>
+        </div>
+
+        <!-- Экспертиза -->
         <section class="skills-section" id="skills">
             <div class="section-title">Что я умею / ЭКСПЕРТИЗА</div>
             <div class="skills-grid">
-                
-                <div class="skill-card">
-                    <h3>Дизайн</h3>
-                    <p>Проектирование интерфейсов курсов в Figma, создание дизайн-систем, верстка адаптивных лонгридов и презентаций, подготовка графики в Illustrator.</p>
+                <div class="skill-card"><h3>Дизайн</h3><p>Проектирование интерфейсов курсов в Figma, создание дизайн-систем, верстка презентаций и чек-листов.</p></div>
+                <div class="skill-card"><h3>Сборка</h3><p>Экспертная разработка интерактивных симуляторов в Articulate Storyline. Сборка мобильных и диалоговых тренажеров в iSpring Suite и Tilda.</p></div>
+                <div class="skill-card"><h3>Методология</h3><p>Проектирование CJM обучения, написание сценариев (Scenario-Based Learning), разработка систем оценки и карьерных треков.</p></div>
+            </div>
+            <div class="tools-container">
+                <div class="tools-title">Стек:</div>
+                <div class="tool-tag">Articulate Storyline</div><div class="tool-tag">iSpring Suite</div><div class="tool-tag">Figma</div><div class="tool-tag">Tilda</div><div class="tool-tag">Adobe Illustrator</div><div class="tool-tag">LMS WebSoft</div>
+            </div>
+        </section>
+
+        <!-- КУРСЫ -->
+        <section class="cases-section" id="courses">
+            <div class="section-title">Интерактивный контент</div>
+            <div class="section-subtitle-text">Разработанные курсы и тренажеры</div>
+            
+            <div class="cases-grid">
+
+                <!-- 1. Lead Junior -->
+                <div class="case-card">
+                    <div class="case-media-container"><iframe src="https://example.com" class="case-iframe"></iframe></div>
+                    <div class="case-info">
+                        <h4>Курс-сериал «Lead Junior»</h4>
+                        <p>Комплексная модульная программа для молодых руководителей со сквозным сюжетом.</p>
+                        <div class="tags-container"><span class="tag">Articulate Storyline</span><span class="tag">Полный цикл</span></div>
+                        
+                        <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
+                        <div class="case-details-content">
+                            <h5>Контекст и задача</h5>
+                            <p>Разработать программу управленческих навыков. Трудность темы лидерства в том, что в жизни людей сложно поделить на жесткие стереотипы, а готовых универсальных алгоритмов не существует.</p>
+                            <h5>Решение и методология</h5>
+                            <p>Создана system из лонгридов (теория) и симуляторов (практика). Мы прописали психологически достоверных сквозных персонажей. От модуля к модулю они раскрывались все глубже, поэтому пользователь учился взаимодействовать с ними на основе опыта прошлых серий, как в реальной жизни.</p>
+                            <h5>Моя роль</h5>
+                            <p>Проектирование программы, написание сценариев, подготовка материалов и финальная техническая сборка интерактивных тренажеров в Articulate.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Сборка</h3>
-                    <p>Экспертная разработка интерактивных симуляторов в Articulate Storyline. Сборка мобильных курсов и тренажеров в iSpring Suite.</p>
+                <!-- 2. Курс-сказка (СЮДА ВСТРОИЛИ ТВОЙ ЖИВОЙ СЮЖЕТ PRO ПЕСИКА!) -->
+                <div class="case-card">
+                    <div class="case-media-container">
+                        <!-- Подключаем твой реальный story.html, который ты только что залила -->
+                        <iframe src="story.html" class="case-iframe" allowfullscreen></iframe>
+                    </div>
+                    <div class="case-info">
+                        <h4>Интерактивный курс-сказка</h4>
+                        <p>Эмоциональный геймифицированный курс по волонтерству на основе разветвленного сторителлинга.</p>
+                        <div class="tags-container"><span class="tag">Articulate Storyline</span><span class="tag">Сценарий & Сборка</span></div>
+                        
+                        <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
+                        <div class="case-details-content">
+                            <h5>Контекст и сюжет</h5>
+                            <p>Главный герой видит объявление о том, что песик ищет дом, и отправляется за ним. По пути он встречает персонажей, нуждающихся в помощи: бабушку с тяжелыми сумками, детей из детского дома на ярмарке. Помогая им, герой (и учащийся) органично узнает о волонтерских фондах и механиках поддержки.</p>
+                            <h5>Техническое воплощение</h5>
+                            <p>Сложная разветвленная логика переходов в зависимости от выборов пользователя. Я полностью отвечала за сценарий, логику интерактивов, техническую сборку в Articulate и постановку детального ТЗ для дизайнера графики.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <h3>Методология</h3>
-                    <p>Проектирование CJM обучения, разработка сценариев (Scenario-Based Learning), создание систем кадрового резерва и сквозной автоматизации наставничества.</p>
+                <!-- 3. Ситуативное лидерство -->
+                <div class="case-card">
+                    <div class="case-media-container" style="display:flex; align-items:center; justify-content:center; color:var(--text-muted);">[ Ссылка / Скриншот лонгрида Tilda ]</div>
+                    <div class="case-info">
+                        <h4>Лонгрид «Ситуативное лидерство»</h4>
+                        <p>Информационный адаптивный курс, спроектированный и полностью сверстанный в Tilda.</p>
+                        <div class="tags-container"><span class="tag">Tilda</span><span class="tag">UX Лонгрида</span></div>
+                        
+                        <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
+                        <div class="case-details-content">
+                            <h5>Задача и реализация</h5>
+                            <p>Перевести комплексный теоретический блок по ситуационному руководству в удобный цифровой формат. Сделан упор на чистую журнальную верстку, ритмику текста и удобство чтения как с десктопа, так и с мобильных устройств.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Сборщики -->
+                <div class="case-card">
+                    <div class="case-media-container" style="display:flex; align-items:center; justify-content:center; color:var(--text-muted);">[ Мобильное видео / Скриншот iSpring ]</div>
+                    <div class="case-info">
+                        <h4>Мобильный тренажер сборщика</h4>
+                        <p>Интерактивный симулятор процессов сборки заказов в дарксторах, созданный под смартфоны.</p>
+                        <div class="tags-container"><span class="tag">iSpring Suite</span><span class="tag">Mobile Learning</span></div>
+                        
+                        <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
+                        <div class="case-details-content">
+                            <h5>Контекст и UX</h5>
+                            <p>Обучение линейного персонала дарксторов непосредственно на рабочих местах. Главная фишка — симулятор iSpring полностью спроектирован и адаптирован под вертикальные экраны мобильных экранов. Интерфейс восносоздает реальный темп и логику работы сборщика на складе.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Блок Кейсов -->
-        <section class="cases-section" id="projects">
-            <div class="section-title">Selected Projects / Избранные кейсы</div>
+        <!-- СИСТЕМНЫЕ ПРОЕКТЫ -->
+        <section class="cases-section" id="systems">
+            <div class="section-title">Проектирование систем</div>
+            <div class="section-subtitle-text">L&D архитектура, кадровый резерв и автоматизация</div>
+            
             <div class="cases-grid">
 
-                <!-- Кейс 1 -->
-                <div class="case-card">
-                    <div class="case-image-stub">[ Скриншот курса Team Lead Level UP ]</div>
+                <!-- 5. Наставничество + Резерв -->
+                <div class="case-card" style="grid-column: span 2;">
+                    <div class="case-media-container" style="display:flex; align-items:center; justify-content:center; color:var(--text-muted); height: 200px;">[ Схема сквозных L&D процессов ]</div>
                     <div class="case-info">
-                        <h4>Team Lead Level UP</h4>
-                        <p>Сквозной курс-сериал для руководителей. Вместо плоских стереотипов — психологически достоверные персонажи, раскрывающиеся внутри сценария симулятора.</p>
-                        <div class="tags-container">
-                            <span class="tag">Articulate Storyline</span>
-                            <span class="tag">Storytelling</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Кейс 2 -->
-                <div class="case-card">
-                    <div class="case-image-stub">[ Скриншот Mobile Simulator ]</div>
-                    <div class="case-info">
-                        <h4>Mobile Simulator</h4>
-                        <p>Интерактивный симулятор процессов сборки для сотрудников дарксторов, полностью спроектированный под мобильные интерфейсы в iSpring Suite.</p>
-                        <div class="tags-container">
-                            <span class="tag">iSpring Suite</span>
-                            <span class="tag">Mobile UX</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Кейс 3 -->
-                <div class="case-card">
-                    <div class="case-image-stub">[ Схема процесса автоматизации ]</div>
-                    <div class="case-info">
-                        <h4>LMS Automation</h4>
-                        <p>Проектирование и запуск автоматической воронки отбора и подготовки наставников в WebSoft LMS. Полное исключение ручного трекинга.</p>
-                        <div class="tags-container">
-                            <span class="tag">WebSoft LMS</span>
-                            <span class="tag">Автоматизация</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Кейс 4 -->
-                <div class="case-card">
-                    <div class="case-image-stub">[ Схема Кадрового резерва ]</div>
-                    <div class="case-info">
-                        <h4>Кадровый резерв</h4>
-                        <p>Методологическое проектирование карьерных треков, фиксация профессиональных дельт и разработка инструментов валидной оценки.</p>
-                        <div class="tags-container">
-                            <span class="tag">L&D Методология</span>
-                            <span class="tag">Оценка</span>
+                        <h4>Архитектура экосистемы развития: Наставничество & Кадровый резерв</h4>
+                        <p>Проектирование комплексных карьерных треков и перевод ручного хаоса отбора наставников в автоматическую воронку в LMS WebSoft.</p>
+                        <div class="tags-container"><span class="tag">WebSoft LMS</span><span class="tag">Проектирование систем</span><span class="tag">Методология</span></div>
+                        
+                        <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
+                        <div class="case-details-content">
+                            <h5>Проблема бизнеса</h5>
+                            <p>Изначально процессы отбора наставников и кадрового резерва велись супервайзерами вручную: списки терялись, сотрудники нарушали дедлайны анкет, аналитика отсутствовала.</p>
+                            <h5>Решение и автоматизация</h5>
+                            <p>По моей личной инициативе была спроектирована сквозная автоматическая воронка на базе WebSoft LMS. Путь сотрудника стал бесшовным: <em>Входной опрос на готовность → Автоматическое назначение теста хард-скиллов → Назначение программы обучения → Финальный тест → Автоматическое зачисление в реестр наставников на корп. портале.</em></p>
+                            <h5>Методологическая база кадрового резерва</h5>
+                            <p>В рамках проекта также оцифрованы 4 ключевые роли: прописана профессиональная дельта (разрыв компетенций) между ними, созданы валидные тесты оценки проф. навыков и сфокусированные программы развития под конкретные дефициты.</p>
                         </div>
                     </div>
                 </div>
@@ -442,6 +298,15 @@
             </div>
         </section>
     </div>
+
+    <script>
+        function toggleCase(button) {
+            const card = button.closest('.case-card');
+            card.classList.toggle('active');
+            const span = button.querySelector('span');
+            if (card.classList.contains('active')) { span.textContent = '↑'; } else { span.textContent = '↓'; }
+        }
+    </script>
 
 </body>
 </html>
