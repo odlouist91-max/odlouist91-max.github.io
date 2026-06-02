@@ -275,14 +275,17 @@
                     </div>
                 </div>
 
-<!-- 4. Сборщики (iSpring — Мобильное видео) -->
+<!-- 4. Сборщики (iSpring — Мобильный телефон в рамке) -->
                 <div class="case-card">
-                    <div class="case-media-container" style="background: #0d0d0d; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                        <!-- Видео запускается само, проигрывается без звука по кругу и имитирует экран смартфона -->
-                        <video autoplay loop muted playsinline style="height: 100%; width: auto; object-fit: contain;">
+                    <!-- Задаем сочный темный фон для контраста -->
+                    <div class="case-media-container" style="background: radial-gradient(circle, #252529 0%, #09090b 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px;">
+                        
+                        <!-- Само видео теперь аккуратно вписано по высоте и закруглено как экран смартфона -->
+                        <video autoplay loop muted playsinline style="height: 100%; width: auto; object-fit: contain; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 4px solid #1f1f23;">
                             <source src="ispring-preview.mp4" type="video/mp4">
                             [ Идет загрузка мобильного тренажера... ]
                         </video>
+                        
                     </div>
                     <div class="case-info">
                         <h4>Мобильный тренажер сборщика</h4>
