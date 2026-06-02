@@ -57,74 +57,37 @@
         .hero-image { width: 100%; height: 480px; background: #e5e5e5; border-radius: var(--radius-large); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.9rem; border: 1px solid var(--text-dark); box-shadow: 20px 20px 0px var(--brand-blue); }
 
         /* Блок Логотипов */
-        /* --- БЕГУЩАЯ СТРОКА С БРЕНДАМИ (MARQUEE) --- */
-        .companies-section {
-            padding: 60px 0 20px 0;
-            overflow: hidden; /* Прячем всё, что выходит за границы экрана */
-        }
-        
-        .companies-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-muted);
-            font-weight: 700;
-            margin-bottom: 24px;
-            padding: 0 40px; /* Чтобы заголовок стоял ровно по сетке контейнера */
-        }
-
-        /* Подложка бегущей строки — красивый фирменный синий (или var(--brand-lime)) */
-        .marquee-wrapper {
-            background: var(--brand-blue); 
-            padding: 24px 0;
-            display: flex;
-            overflow: hidden;
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            transform: rotate(-1deg); /* Легкий наклон для дерзкого кибер-эффекта */
-            box-shadow: 0 10px 30px rgba(0, 34, 255, 0.2);
-        }
-
-        .marquee-content {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            white-space: nowrap;
-            animation: scrollMarquee 25s linear infinite; /* Плавное бесконечное движение */
-        }
-
-        /* Элемент компании внутри строки */
-        .company-name {
-            font-size: 1.8rem; /* Делаем крупнее и весомее */
-            font-weight: 800;
-            color: #ffffff; /* Контрастный белый текст */
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Маленькая разделительная точка между компаниями */
-        .company-name::after {
-            content: "•";
-            color: var(--brand-lime); /* Кислотно-лаймовая точка-разделитель */
-            font-size: 1.5rem;
-        }
-
-        /* Анимация движения справа налево */
-        @keyframes scrollMarquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Сдвигаем ровно на половину длины */
-        }
-
-        /* Замедление строки при наведении мышки (чтобы удобно было читать) */
-        .marquee-wrapper:hover .marquee-content {
-            animation-play-state: paused;
-        }
+        <!-- Бренды (Бегущая строка с жесткими инлайн-стилями) -->
+        <section style="padding: 60px 0 20px 0; overflow: hidden; width: 100%;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); font-weight: 700; margin-bottom: 24px; padding: 0 40px;">
+                Опыт сотрудничества и разработки для компаний
+            </div>
+            
+            <!-- Синяя подложка с наклоном -->
+            <div class="marquee-wrapper" style="background: var(--brand-blue); padding: 24px 0; display: flex; overflow: hidden; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; transform: rotate(-1deg); box-shadow: 0 10px 30px rgba(0, 34, 255, 0.2);">
+                
+                <!-- Контейнер, который заставляет всё встать В ОДНУ СТРОКУ и двигаться -->
+                <div class="marquee-content" style="display: flex; gap: 60px; align-items: center; white-space: nowrap; flex-shrink: 0; min-width: 200%;">
+                    
+                    <!-- Лента 1 -->
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Магнит <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Ozon <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Samsung <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Р-Фарм <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Еврохим <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">SuperStep <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    
+                    <!-- Лента 2 (для непрерывности) -->
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Магнит <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Ozon <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Samsung <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Р-Фарм <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Еврохим <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">SuperStep <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                </div>
+                
+            </div>
+        </section>
 
         /* Экспертиза */
         .skills-section { padding: 100px 0; }
