@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио | Моника | Digital Learning Developer</title>
+    <title>Портфолио | Электронное обучение</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,11 +32,7 @@
             position: relative;
         }
 
-        /* Фоновые ауры и сетка */
-        .aura-1 { position: fixed; top: -150px; right: -150px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(191,255,0,0.22) 0%, rgba(255,255,255,0) 70%); z-index: -1; pointer-events: none; }
-        .aura-2 { position: fixed; bottom: -150px; left: -200px; width: 800px; height: 800px; background: radial-gradient(circle, rgba(0,34,255,0.08) 0%, rgba(255,255,255,0) 70%); z-index: -1; pointer-events: none; }
         .bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(to right, var(--border-thin) 1px, transparent 1px), linear-gradient(to bottom, var(--border-thin) 1px, transparent 1px); background-size: 100px 100px; z-index: -2; pointer-events: none; }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; }
 
         /* Навигация */
@@ -47,8 +43,9 @@
         .nav-cta { background: var(--text-dark); color: white !important; padding: 12px 26px; border-radius: 30px; }
         .nav-cta:hover { background: var(--brand-blue); color: white !important; }
 
-        /* Блок Обо мне */
-        .hero-section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; padding: 60px 0 40px 0; }
+        /* Шапка с хромированными сферами */
+        .hero-section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; padding: 60px 0 40px 0; position: relative; overflow: hidden; }
+        .hero-content { position: relative; z-index: 2; }
         .hero-content h1 { font-size: 4.2rem; font-weight: 800; line-height: 1.05; letter-spacing: -0.05em; margin: 0 0 28px 0; }
         .highlight-word { background: var(--brand-lime); padding: 0 12px; border-radius: 12px; display: inline-block; transform: rotate(-1deg); }
         .hero-content p { font-size: 1.3rem; line-height: 1.6; color: #222; margin-bottom: 48px; max-width: 600px; }
@@ -56,38 +53,18 @@
         .social-links a:hover { background: var(--text-dark); color: white; transform: scale(1.05); }
         .hero-image { width: 100%; height: 480px; background: #e5e5e5; border-radius: var(--radius-large); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.9rem; border: 1px solid var(--text-dark); box-shadow: 20px 20px 0px var(--brand-blue); }
 
-        /* Блок Логотипов */
-        <!-- Бренды (Бегущая строка с жесткими инлайн-стилями) -->
-        <section style="padding: 60px 0 20px 0; overflow: hidden; width: 100%;">
-            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); font-weight: 700; margin-bottom: 24px; padding: 0 40px;">
-                Опыт сотрудничества и разработки для компаний
-            </div>
-            
-            <!-- Синяя подложка с наклоном -->
-            <div class="marquee-wrapper" style="background: var(--brand-blue); padding: 24px 0; display: flex; overflow: hidden; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; transform: rotate(-1deg); box-shadow: 0 10px 30px rgba(0, 34, 255, 0.2);">
-                
-                <!-- Контейнер, который заставляет всё встать В ОДНУ СТРОКУ и двигаться -->
-                <div class="marquee-content" style="display: flex; gap: 60px; align-items: center; white-space: nowrap; flex-shrink: 0; min-width: 200%;">
-                    
-                    <!-- Лента 1 -->
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Магнит <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Ozon <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Samsung <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Р-Фарм <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Еврохим <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">SuperStep <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    
-                    <!-- Лента 2 (для непрерывности) -->
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Магнит <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Ozon <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Samsung <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Р-Фарм <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Еврохим <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">SuperStep <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
-                </div>
-                
-            </div>
-        </section>
+        /* Сферы */
+        .bubble { position: absolute; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e2e8f0 15%, #64748b 45%, #1e293b 70%, #0f172a 90%, var(--brand-lime) 100%); box-shadow: inset -15px -15px 40px rgba(0, 34, 255, 0.25), inset 15px 15px 35px rgba(255, 255, 255, 0.7), 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 40px rgba(191, 255, 0, 0.15); z-index: 1; pointer-events: none; }
+        .bubble::after { content: ''; position: absolute; top: 20%; left: 20%; width: 20%; height: 10%; background: rgba(255, 255, 255, 0.8); border-radius: 50%; transform: rotate(-30deg); filter: blur(0.5px); }
+        @keyframes floatBubble1 { 0% { transform: translateY(0px) translateX(0px) scale(1); } 50% { transform: translateY(-20px) translateX(10px) scale(1.02); } 100% { transform: translateY(0px) translateX(0px) scale(1); } }
+        @keyframes floatBubble2 { 0% { transform: translateY(0px) translateX(0px); } 50% { transform: translateY(15px) translateX(-15px); } 100% { transform: translateY(0px) translateX(0px); } }
+        .bubble-1 { width: 180px; height: 180px; top: -25px; right: 3%; animation: floatBubble1 9s ease-in-out infinite; }
+        .bubble-2 { width: 110px; height: 110px; bottom: -10px; left: 5%; animation: floatBubble2 11s ease-in-out infinite; }
+
+        /* Анимация бегущей строки */
+        @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-content { animation: scrollMarquee 22s linear infinite; }
+        .marquee-wrapper:hover .marquee-content { animation-play-state: paused; }
 
         /* Экспертиза */
         .skills-section { padding: 100px 0; }
@@ -99,9 +76,7 @@
         .skill-card h3 { font-size: 1.8rem; font-weight: 800; margin: 0 0 16px 0; letter-spacing: -0.03em; }
         .skill-card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0; }
         .skill-card:hover p { color: rgba(255,255,255,0.8); }
-        .skill-card::after { content: "↓"; position: absolute; bottom: 30px; right: 30px; font-size: 1.3rem; font-weight: 300; color: var(--brand-blue); opacity: 0.3; }
-        .skill-card:hover::after { color: var(--brand-lime); opacity: 1; transform: rotate(-135deg); }
-
+        
         .tools-container { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: #ffffff; padding: 20px 30px; border-radius: var(--radius-small); border: 1px solid var(--border-thin); }
         .tools-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-right: 15px; }
         .tool-tag { font-size: 0.8rem; font-weight: 600; padding: 6px 14px; background: #f1f1f1; border-radius: 8px; color: var(--text-dark); }
@@ -110,46 +85,21 @@
         .cases-section { padding: 80px 0; border-top: 1px solid var(--border-thin); }
         .section-subtitle-text { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; margin-top: -30px; margin-bottom: 50px; }
         .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; }
-        
         .case-card { background: #ffffff; border: 1px solid var(--border-thin); border-radius: var(--radius-large); overflow: hidden; display: flex; flex-direction: column; position: relative; }
-        
-        /* ЖЕСТКИЙ БЛОЧНЫЙ КОНТЕЙНЕР ДЛЯ ИНТЕРАКТИВА */
-        .case-media-container { 
-            width: 100%; 
-            height: 320px; 
-            background: #f1f3f5; 
-            border-bottom: 1px solid var(--border-thin); 
-            overflow: hidden; 
-            position: relative;
-            display: block;
-        }
-        
+        .case-media-container { width: 100%; height: 320px; background: #f1f3f5; border-bottom: 1px solid var(--border-thin); overflow: hidden; position: relative; display: block; }
         .case-iframe { width: 100%; height: 100%; border: none; display: block; }
-        .case-video { width: 100%; height: 100%; object-fit: cover; display: block; }
         .case-card::before { content: "PROJECT"; position: absolute; top: 25px; left: 25px; background: var(--text-dark); color: white; font-size: 0.65rem; font-weight: 700; padding: 6px 12px; letter-spacing: 0.1em; border-radius: 6px; z-index: 10; pointer-events: none;}
-        
         .case-info { padding: 40px; }
         .case-info h4 { font-size: 1.6rem; font-weight: 800; margin: 0 0 12px 0; letter-spacing: -0.03em; }
         .case-info p { font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0 0 24px 0; }
         .tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
         .tag { font-size: 0.75rem; font-weight: 600; padding: 6px 14px; background: #f1f1f1; border-radius: 30px; color: #444; }
         
-        /* СТИЛИ ДЛЯ ВСПЛЫВАЮЩИХ ДЕТАЛЕЙ (АККОРДЕОН) */
-        .details-btn {
-            background: none; border: 1px solid var(--text-dark); color: var(--text-dark);
-            padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;
-            cursor: pointer; display: inline-flex; align-items: center; gap: 8px; width: max-content;
-        }
+        .details-btn { background: none; border: 1px solid var(--text-dark); color: var(--text-dark); padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; width: max-content; }
         .details-btn:hover { background: var(--text-dark); color: white; }
-        
-        .case-details-content {
-            display: none; 
-            padding-top: 30px; margin-top: 30px;
-            border-top: 1px dashed var(--border-thin);
-        }
+        .case-details-content { display: none; padding-top: 30px; margin-top: 30px; border-top: 1px dashed var(--border-thin); }
         .case-details-content h5 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-blue); margin: 0 0 8px 0; font-weight: 700; }
         .case-details-content p { font-size: 0.95rem; color: #333; margin-bottom: 20px; line-height: 1.5; }
-
         .case-card.active .case-details-content { display: block; }
         .case-card.active { border-color: var(--text-dark); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
 
@@ -159,117 +109,31 @@
             .hero-image { height: 380px; box-shadow: 12px 12px 0px var(--brand-blue); }
             .case-media-container { height: 240px; }
         }
-        /* --- ДЕРЗКИЕ ХРОМИРОВАННЫЕ СФЕРЫ (КИБЕР-СТИЛЬ) --- */
-.hero-section {
-    position: relative;
-    overflow: hidden;
-}
-
-.bubble {
-    position: absolute;
-    border-radius: 50%;
-    /* Жесткий металлический градиент с кислотно-лаймовым и синим отсветом по краям */
-    background: radial-gradient(circle at 35% 35%, 
-        #ffffff 0%, 
-        #e2e8f0 15%, 
-        #64748b 45%, 
-        #1e293b 70%, 
-        #0f172a 90%,
-        var(--brand-lime) 100% /* Лаймовый рефлекс на темном контуре сферы */
-    );
-    /* Сложная система теней для эффекта полированной зеркальной стали */
-    box-shadow: 
-        inset -15px -15px 40px rgba(0, 34, 255, 0.25), /* Синий глубокий рефлекс в тени */
-        inset 15px 15px 35px rgba(255, 255, 255, 0.7),  /* Мощный верхний блик */
-        0 25px 50px rgba(0, 0, 0, 0.15),                /* Мягкая падающая тень */
-        0 0 40px rgba(191, 255, 0, 0.15);               /* Легкое лаймовое свечение вокруг сферы */
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Дополнительный сверх-четкий блик, как на полированном металле */
-.bubble::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 20%;
-    height: 10%;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    transform: rotate(-30deg);
-    filter: blur(0.5px);
-}
-
-/* Анимация плавного парения (оставляем, металл тоже может левитировать) */
-@keyframes floatBubble1 {
-    0% { transform: translateY(0px) translateX(0px) scale(1); }
-    50% { transform: translateY(-20px) translateX(10px) scale(1.02); }
-    100% { transform: translateY(0px) translateX(0px) scale(1); }
-}
-
-@keyframes floatBubble2 {
-    0% { transform: translateY(0px) translateX(0px); }
-    50% { transform: translateY(15px) translateX(-15px); }
-    100% { transform: translateY(0px) translateX(0px); }
-}
-
-.bubble-1 {
-    width: 200px;
-    height: 200px;
-    top: -30px;
-    right: 3%;
-    animation: floatBubble1 9s ease-in-out infinite;
-}
-
-.bubble-2 {
-    width: 120px;
-    height: 120px;
-    bottom: -10px;
-    left: 5%;
-    animation: floatBubble2 11s ease-in-out infinite;
-}
-
-.bubble-3 {
-    width: 70px;
-    height: 70px;
-    top: 35%;
-    right: 28%;
-    animation: floatBubble2 8s ease-in-out infinite;
-    opacity: 0.8;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
     </style>
 </head>
 <body>
 
-    <div class="aura-1"></div>
-    <div class="aura-2"></div>
     <div class="bg-grid"></div>
 
     <div class="container">
-        <!-- Навигация -->
         <nav>
-            <div class="logo">MONICA.DEV</div>
+            <div class="logo">LEARNING.DEV</div>
             <div class="nav-links">
                 <a href="#skills">Экспертиза</a>
                 <a href="#courses">Примеры курсов</a>
                 <a href="#systems">Системные проекты</a>
-                <a href="https://t.me/your_telegram" class="nav-cta">Связаться</a>
+                <a href="https://t.me/your_telegram" class="nav-cta">Telegram</a>
             </div>
         </nav>
 
-        <!-- Hero -->
         <section class="hero-section" id="about">
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
             <div class="hero-content">
-                <h1>Привет!<br>Меня зовут <span class="highlight-word">Моника.</span></h1>
+                <h1>Привет!<br>Я <span class="highlight-word">Элен.</span></h1>
                 <p>Я занимаюсь дизайном и разработкой интерактивных курсов, лонгридов и сложных образовательных систем. Сочетаю глубокую методологию обучения с чистым UI/UX дизайном и автоматизацией на базе корпоративных LMS.</p>
                 <div class="social-links">
-                    <a href="https://t.me/your_telegram" target="_blank">Telegram</a>
+                    <a href="https://t.me/your_telegram" target="_blank">Написать мне</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -277,18 +141,29 @@
             </div>
         </section>
 
-        <!-- Бренды -->
-        <div class="companies-bar">
-            <div class="companies-title">Опыт сотрудничества и разработки для компаний</div>
-            <div class="company-name">Магнит</div>
-            <div class="company-name">Ozon</div>
-            <div class="company-name">Samsung</div>
-            <div class="company-name">Р-Фарм</div>
-            <div class="company-name">Еврохим</div>
-            <div class="company-name">SuperStep</div>
-        </div>
+        <section style="padding: 60px 0 40px 0; overflow: hidden; width: 100%;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); font-weight: 700; margin-bottom: 24px;">
+                Опыт сотрудничества и разработки для компаний
+            </div>
+            <div class="marquee-wrapper" style="background: var(--brand-blue); padding: 24px 0; display: flex; overflow: hidden; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; transform: rotate(-1deg); box-shadow: 0 10px 30px rgba(0, 34, 255, 0.2);">
+                <div class="marquee-content" style="display: flex; gap: 60px; align-items: center; white-space: nowrap; flex-shrink: 0;">
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Магнит <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Ozon <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Samsung <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Р-Фарм <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Еврохим <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">SuperStep <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Магнит <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Ozon <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Samsung <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Р-Фарм <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">Еврохим <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 20px;">SuperStep <span style="color: var(--brand-lime); font-size: 1.5rem;">•</span></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Экспертиза -->
         <section class="skills-section" id="skills">
             <div class="section-title">Что я умею / ЭКСПЕРТИЗА</div>
             <div class="skills-grid">
@@ -302,14 +177,12 @@
             </div>
         </section>
 
-        <!-- КУРСЫ -->
         <section class="cases-section" id="courses">
             <div class="section-title">Интерактивный контент</div>
             <div class="section-subtitle-text">Разработанные курсы и тренажеры</div>
             
             <div class="cases-grid">
 
-                <!-- 1. Lead Junior -->
                 <div class="case-card">
                     <div class="case-media-container">
                         <iframe src="lead-junior/story.html" class="case-iframe" allowfullscreen></iframe>
@@ -332,11 +205,8 @@
                     </div>
                 </div>
 
-                <!-- 2. Курс-сказка -->
                 <div class="case-card">
                     <div class="case-media-container">
-                        <!-- ВНИМАНИЕ: Проверь, чтобы имя папки ниже совпадало с именем папки на GitHub! -->
-                        <!-- Если папка называется dog-story — оставляй так. Если Dog-story — поменяй на D большую. -->
                         <iframe src="dog-story/story.html" class="case-iframe" allowfullscreen></iframe>
                     </div>
                     <div class="case-info">
@@ -354,20 +224,12 @@
                         </div>
                     </div>
                 </div>
-        
 
-                <!-- 3. Ситуативное лидерство (Tilda — Финальный UX дизайн) -->
-                <div class="case-card" style="position: relative;" onmouseenter="this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.tilda-btn').style.transform='translateY(0)'; this.querySelector('.tilda-btn').style.opacity='1';" onmouseleave="this.querySelector('.overlay').style.background='rgba(0,0,0,0.15)'; this.querySelector('.tilda-btn').style.transform='translateY(10px)'; this.querySelector('.tilda-btn').style.opacity='0.9';">
+                <div class="case-card" onmouseenter="this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)';" onmouseleave="this.querySelector('.overlay').style.background='rgba(0,0,0,0.15)';">
                     <div class="case-media-container" style="position: relative;">
-                        <!-- Твоя шикарная обложка -->
                         <img src="tilda-cover.png" alt="Обложка Tilda" style="width: 100%; height: 100%; object-fit: cover;">
-                        
-                        <!-- Интерактивное наложение (Overlay) — теперь легкое затемнение 15% -->
                         <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.15); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 25px; transition: all 0.3s ease;">
-                            
-                            <!-- Контрастная белая кнопка, опущенная вниз -->
-                            <a href="https://tnd.magnit.ru/page127615276.html" target="_blank" class="tilda-btn" style="text-decoration: none; background: #ffffff; color: #111111; padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #ffffff; transition: all 0.3s ease; transform: translateY(10px); opacity: 0.9;">Открыть проект ↗</a>
-                        
+                            <a href="https://tnd.magnit.ru/page127615276.html" target="_blank" style="text-decoration: none; background: #ffffff; color: #111111; padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #ffffff;">Открыть проект ↗</a>
                         </div>
                     </div>
                     <div class="case-info">
@@ -380,76 +242,59 @@
                         <div class="case-details-content">
                             <h5>Задача и реализация</h5>
                             <p>Перевести комплексный теоретический блок по ситуационному руководству в удобный цифровой формат. Сделан упор на чистую журнальную верстку, ритмику текста и удобство чтения как с десктопа, так и с мобильных устройств.</p>
-                            <h5>Методологические фишки</h5>
-                            <p>Разбивка контента по принципу микрообучения (Microlearning). Вместо монотонного лонгрида спроектирована система интерактивных переключателей, раскрывающихся списков и встроенных быстрых тестов для самопроверки.</p>
                         </div>
                     </div>
                 </div>
 
-<!-- 4. Сборщики (iSpring — Мобильный телефон в рамке) -->
                 <div class="case-card">
-                    <!-- Задаем сочный темный фон для контраста -->
-                    <div class="case-media-container" style="background: radial-gradient(circle, #252529 0%, #09090b 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px;">
-                        
-                        <!-- Само видео теперь аккуратно вписано по высоте и закруглено как экран смартфона -->
-                        <video autoplay loop muted playsinline style="height: 100%; width: auto; object-fit: contain; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 4px solid #1f1f23;">
-                            <source src="ispring-preview.mp4" type="video/mp4">
-                            [ Идет загрузка мобильного тренажера... ]
-                        </video>
-                        
+                    <div class="case-media-container" style="background: #18181b; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 15px;">
+                        <div style="height: 100%; aspect-ratio: 9 / 16; background: #000000; border-radius: 24px; padding: 6px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 3px solid #3f3f46; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;">
+                                <source src="ispring-preview.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                     <div class="case-info">
                         <h4>Мобильный тренажер сборщика</h4>
                         <p>Интерактивный симулятор процессов сборки заказов в дарксторах, созданный под смартфоны.</p>
-                        <div class="tags-container"><span class="tag">iSpring Suite</span><span class="tag">Mobile Learning</span><span class="tag">Тренажер процессов</span></div>
+                        <div class="tags-container"><span class="tag">iSpring Suite</span><span class="tag">Mobile Learning</span></div>
                         
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
                         
                         <div class="case-details-content">
                             <h5>Контекст и UX</h5>
-                            <p>Обучение линейного персонала дарксторов непосредственно на рабочих местах. Главная фишка — симулятор iSpring полностью спроектирован и адаптирован под вертикальные экраны мобильных устройств. Интерфейс воссоздает реальный темп и логику работы сборщика на складе.</p>
-                            <h5>Результат проекта</h5>
-                            <p>Интеграция симулятора в систему онбординга позволила сократить количество ошибок новичков при сборке первых заказов на 18% и ускорить выход сотрудников на плановые показатели скорости.</p>
+                            <p>Обучение линейного персонала дарксторов непосредственно на рабочих местах. Симулятор полностью адаптирован под вертикальные экраны смартфонов.</p>
                         </div>
                     </div>
-                </div> 
+                </div>
 
             </div>
         </section>
 
-       <!-- СИСТЕМНЫЕ ПРОЕКТЫ -->
         <section class="cases-section" id="systems">
             <div class="section-title">Проектирование систем</div>
             <div class="section-subtitle-text">L&D architecture, кадровый резерв и автоматизация</div>
             
             <div class="cases-grid" style="grid-template-columns: 1fr; gap: 40px;">
 
-                <!-- 5. Автоматизация Наставничества (Кейс 1) -->
                 <div class="case-card" style="width: 100%;">
                     <div class="case-media-container" style="display:flex; flex-direction: column; align-items:center; justify-content:center; color:var(--text-dark); height: 220px; background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); padding: 30px; text-align: center;">
                         <div style="font-size: 2.8rem; margin-bottom: 10px;">⚙️</div>
                         <div style="font-weight: 800; font-size: 1.3rem; margin-bottom: 5px;">Автоматизация воронки «Наставничество»</div>
-                        <p style="font-size: 0.9rem; color: #333; margin: 0; max-width: 500px;">Перевод ручного хаоса отбора и координации наставников в бесшовный цифровой алгоритм в LMS WebSoft</p>
+                        <p style="font-size: 0.9rem; color: #333; margin: 0; max-width: 500px;">Перевод ручного хаоса отбора наставников в автоматический цифровой трек в LMS WebSoft</p>
                     </div>
                     <div class="case-info">
                         <h4>Автоматизация процессов наставничества в LMS WebSoft</h4>
                         <p>Проектирование архитектуры и внедрение сквозного цифрового трека для автоматического отбора и управления базой наставников компании.</p>
-                        <div class="tags-container"><span class="tag">WebSoft LMS</span><span class="tag">L&D Architecture</span><span class="tag">Автоматизация процессов</span></div>
-                        
+                        <div class="tags-container"><span class="tag">WebSoft LMS</span><span class="tag">L&D Architecture</span></div>
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
-                        
                         <div class="case-details-content">
-                            <h5>Проблема бизнеса</h5>
-                            <p>Изначально процессы отбора наставников велись супервайзерами полностью вручную. Списки в Excel постоянно терялись, сотрудники нарушали дедлайны заполнения анкет, а у руководства полностью отсутствовала сквозная аналитика и понимание реального масштаба базы.</p>
-                            <h5>Решение и автоматизация</h5>
-                            <p>По моей личной инициативе была спроектирована и внедрена автоматическая воронка на базе WebSoft LMS. Путь сотрудника стал бесшовным: <em>Входной опрос на готовность → Автоматическое назначение теста хард-скиллов → Назначение программы обучения → Финальное тестирование → Автоматическое зачисление в официальный реестр наставников на корпоративном портале.</em></p>
-                            <h5>Результат</h5>
-                            <p>Процесс администрирования со стороны L&D сократился на 70%, человеческий фактор при отборе сведен к нулю, а компания получила прозрачную, обновляемую в реальном времени базу верифицированных наставников.</p>
+                            <h5>Решение</h5>
+                            <p>По моей личной инициативе была спроектирована автоматическая воронка: <em>Входной опрос → Автотест хард-скиллов → Назначение обучения → Зачисление в реестр.</em> Процесс администрирования со стороны L&D сократился на 70%.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 6. Кадровый резерв (Кейс 2) -->
                 <div class="case-card" style="width: 100%;">
                     <div class="case-media-container" style="display:flex; flex-direction: column; align-items:center; justify-content:center; color:var(--text-dark); height: 220px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 30px; text-align: center;">
                         <div style="font-size: 2.8rem; margin-bottom: 10px;">🎯</div>
@@ -458,18 +303,12 @@
                     </div>
                     <div class="case-info">
                         <h4>Проектирование комплексной системы Кадрового Резерва</h4>
-                        <p>Глубокая методологическая работа по оцифровке ключевых ролей, созданию валидных инструментов оценки и программ ликвидации дефицитов навыков.</p>
-                        <div class="tags-container"><span class="tag">Методология</span><span class="tag">Кадровый резерв</span><span class="tag">Оценка компетенций</span><span class="tag">CJM обучения</span></div>
-                        
+                        <p>Глубокая методологическая работа по оцифровке ключевых ролей, созданию инструментов оценки и программ ликвидации дефицитов навыков.</p>
+                        <div class="tags-container"><span class="tag">Методология</span><span class="tag">Кадровый резерв</span></div>
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
-                        
                         <div class="case-details-content">
-                            <h5>Задача проекта</h5>
-                            <p>Выстроить прозрачную систему преемственности для критически важных позиций компании. Обеспечить бизнес готовыми внутренними кандидатами, готовыми безболезненно и быстро занять освобождающиеся руководящие роли.</p>
-                            <h5>Методологическая реализация</h5>
-                            <p>В рамках проекта были полностью оцифрованы 4 ключевые управленческие роли. Прописана детальная профессиональная дельта (разрыв компетенций) между ними. Разработаны валидные тесты для оценки текущих профессиональных навыков сотрудников и спроектированы точечные программы развития (IDP), направленные строго на ликвидацию выявленных дефицитов.</p>
-                            <h5>Моя роль</h5>
-                            <p>Архитектор методологии: от проведения стратегических сессий с экспертами и написания профилей должностей до сборки карт развития и защиты концепции перед топ-менеджментом.</p>
+                            <h5>Релизация</h5>
+                            <p>Оцифрованы 4 управленческие роли. Разработаны тесты оценки профессиональных навыков сотрудников и спроектированы точечные программы развития (IDP) под конкретные дефициты.</p>
                         </div>
                     </div>
                 </div>
@@ -486,6 +325,5 @@
             if (card.classList.contains('active')) { span.textContent = '↑'; } else { span.textContent = '↓'; }
         }
     </script>
-
 </body>
 </html>
