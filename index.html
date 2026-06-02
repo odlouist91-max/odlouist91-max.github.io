@@ -85,9 +85,20 @@
         .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; }
         
         .case-card { background: #ffffff; border: 1px solid var(--border-thin); border-radius: var(--radius-large); overflow: hidden; display: flex; flex-direction: column; position: relative; }
-        .case-media-container { width: 100%; height: 320px; background: #f1f3f5; border-bottom: 1px solid var(--border-thin); overflow: hidden; position: relative; }
-        .case-iframe { width: 100%; height: 100%; border: none; }
-        .case-video { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* ЖЕСТКИЙ БЛОЧНЫЙ КОНТЕЙНЕР ДЛЯ ИНТЕРАКТИВА */
+        .case-media-container { 
+            width: 100%; 
+            height: 320px; 
+            background: #f1f3f5; 
+            border-bottom: 1px solid var(--border-thin); 
+            overflow: hidden; 
+            position: relative;
+            display: block;
+        }
+        
+        .case-iframe { width: 100%; height: 100%; border: none; display: block; }
+        .case-video { width: 100%; height: 100%; object-fit: cover; display: block; }
         .case-card::before { content: "PROJECT"; position: absolute; top: 25px; left: 25px; background: var(--text-dark); color: white; font-size: 0.65rem; font-weight: 700; padding: 6px 12px; letter-spacing: 0.1em; border-radius: 6px; z-index: 10; pointer-events: none;}
         
         .case-info { padding: 40px; }
@@ -187,9 +198,12 @@
             
             <div class="cases-grid">
 
-                <!-- 1. Lead Junior -->
+                <!-- 1. Lead Junior (ЖИВОЙ КУРС В ПОДПАПКЕ) -->
                 <div class="case-card">
-                    <div class="case-media-container"><iframe src="https://example.com" class="case-iframe"></iframe></div>
+                    <div class="case-media-container">
+                        <!-- Путь ведет в твою новую подпапку lead-junior -->
+                        <iframe src="lead-junior/story.html" class="case-iframe" allowfullscreen></iframe>
+                    </div>
                     <div class="case-info">
                         <h4>Курс-сериал «Lead Junior»</h4>
                         <p>Комплексная модульная программа для молодых руководителей со сквозным сюжетом.</p>
@@ -201,17 +215,16 @@
                             <h5>Контекст и задача</h5>
                             <p>Разработать программу управленческих навыков. Трудность темы лидерства в том, что в жизни людей сложно поделить на жесткие стереотипы, а готовых универсальных алгоритмов не существует.</p>
                             <h5>Решение и методология</h5>
-                            <p>Создана system из лонгридов (теория) и симуляторов (практика). Мы прописали психологически достоверных сквозных персонажей. От модуля к модулю они раскрывались все глубже, поэтому пользователь учился взаимодействовать с ними на основе опыта прошлых серий, как в реальной жизни.</p>
+                            <p>Создана система из лонгридов (теория) и симуляторов (практика). Мы прописали психологически достоверных сквозных персонажей. От модуля к модулю они раскрывались все глубже, поэтому пользователь учился взаимодействовать с ними на основе опыта прошлых серий, как в реальной жизни.</p>
                             <h5>Моя роль</h5>
                             <p>Проектирование программы, написание сценариев, подготовка материалов и финальная техническая сборка интерактивных тренажеров в Articulate.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Курс-сказка (СЮДА ВСТРОИЛИ ТВОЙ ЖИВОЙ СЮЖЕТ PRO ПЕСИКА!) -->
+                <!-- 2. Курс-сказка (ЖИВОЙ КУРС В КОРНЕ) -->
                 <div class="case-card">
                     <div class="case-media-container">
-                        <!-- Подключаем твой реальный story.html, который ты только что залила -->
                         <iframe src="story.html" class="case-iframe" allowfullscreen></iframe>
                     </div>
                     <div class="case-info">
@@ -259,7 +272,7 @@
                         
                         <div class="case-details-content">
                             <h5>Контекст и UX</h5>
-                            <p>Обучение линейного персонала дарксторов непосредственно на рабочих местах. Главная фишка — симулятор iSpring полностью спроектирован и адаптирован под вертикальные экраны мобильных экранов. Интерфейс восносоздает реальный темп и логику работы сборщика на складе.</p>
+                            <p>Обучение линейного персонала дарксторов непосредственно на рабочих местах. Главная фишка — симулятор iSpring полностью спроектирован и адаптирован под вертикальные экраны мобильных экранов. Интерфейс воссоздает реальный темп и логику работы сборщика на складе.</p>
                         </div>
                     </div>
                 </div>
@@ -270,7 +283,7 @@
         <!-- СИСТЕМНЫЕ ПРОЕКТЫ -->
         <section class="cases-section" id="systems">
             <div class="section-title">Проектирование систем</div>
-            <div class="section-subtitle-text">L&D архитектура, кадровый резерв и автоматизация</div>
+            <div class="section-subtitle-text">L&D architecture, кадровый резерв и автоматизация</div>
             
             <div class="cases-grid">
 
@@ -290,7 +303,7 @@
                             <h5>Решение и автоматизация</h5>
                             <p>По моей личной инициативе была спроектирована сквозная автоматическая воронка на базе WebSoft LMS. Путь сотрудника стал бесшовным: <em>Входной опрос на готовность → Автоматическое назначение теста хард-скиллов → Назначение программы обучения → Финальный тест → Автоматическое зачисление в реестр наставников на корп. портале.</em></p>
                             <h5>Методологическая база кадрового резерва</h5>
-                            <p>В рамках проекта также оцифрованы 4 ключевые роли: прописана профессиональная дельта (разрыв компетенций) между ними, созданы валидные тесты оценки проф. навыков и сфокусированные программы развития под конкретные дефициты.</p>
+                            <p>В рамках проекта также оцифрованы 4 ключевые роли: прописана профессиональная дельта (разрыв компетенций) между ними, созданы валидные тестов оценки проф. навыков и сфокусированные программы развития под конкретные дефициты.</p>
                         </div>
                     </div>
                 </div>
