@@ -245,33 +245,56 @@
                 </div>
         
 
-                <!-- 3. Ситуативное лидерство -->
-<div class="case-card">
-    <div class="case-media-container" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; text-align: center;">
-        <div style="font-size: 2.5rem; margin-bottom: 15px;">📖</div>
-        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 5px; color: var(--text-dark);">Адаптивный лонгрид</div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0 0 20px 0; max-width: 280px;">Курс спроектирован для идеального чтения как с десктопа, так и со смартфонов</p>
-        
-        <!-- ВОТ СЮДА ВСТАВЛЯЙ СВОЮ ССЫЛКУ ВНУТРЬ КАВЫЧЕК Вместо "https://твоя-ссылка..." -->
-        <a href="http://tnd.magnit.ru/page127615276.html" target="_blank" style="text-decoration: none; background: var(--text-dark); color: white; padding: 10px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Открыть проект ↗</a>
-    
-    </div>
+                <!-- 3. Ситуативное лидерство (Tilda с обложкой) -->
+                <div class="case-card">
+                    <div class="case-media-container" style="position: relative;">
+                        <!-- Твоя картинка растянется на весь блок обложки -->
+                        <img src="tilda-cover.jpg" alt="Обложка Tilda" style="width: 100%; height: 100%; object-fit: cover;">
+                        
+                        <!-- Красивое темное наложение и контрастная БЕЛАЯ кнопка поверх картинки -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
+                            <div style="font-weight: 700; font-size: 1.2rem; margin-bottom: 12px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Адаптивный лонгрид</div>
+                            <!-- Твоя ссылка на Тильду -->
+                            <a href="http://tnd.magnit.ru/page127615276.html" target="_blank" style="text-decoration: none; background: var(--brand-lime); color: var(--text-dark); padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Открыть проект ↗</a>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <h4>Лонгрид «Ситуативное лидерство»</h4>
+                        <p>Информационный адаптивный курс, спроектированный и полностью сверстанный в Tilda.</p>
+                        <div class="tags-container"><span class="tag">Tilda</span><span class="tag">UX Лонгрида</span><span class="tag">Scorm-кластер</span></div>
+                        
+                        <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
+                        <div class="case-details-content">
+                            <h5>Задача и реализация</h5>
+                            <p>Перевести комплексный теоретический block по ситуационному руководству в удобный цифровой формат. Сделан упор на чистую журнальную верстку, ритмику текста и удобство чтения как с десктопа, так и с мобильных устройств.</p>
+                            <h5>Методологические фишки</h5>
+                            <p>Разбивка контента по принципу микрообучения (Microlearning). Вместо монотонного лонгрида спроектирована system интерактивных переключателей, раскрывающихся списков и встроенных быстрых тестов для самопроверки.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 4. Сборщики -->
+                <!-- 4. Сборщики (iSpring — ПОЧИНЕННАЯ СЕТКА) -->
                 <div class="case-card">
-                    <div class="case-media-container" style="display:flex; align-items:center; justify-content:center; color:var(--text-muted);">[ Мобильное видео / Скриншот iSpring ]</div>
+                    <div class="case-media-container" style="background: #111111; display: flex; align-items: center; justify-content: center;">
+                        <!-- Плеер для твоего будущего видео -->
+                        <video class="case-video" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="ispring-preview.mp4" type="video/mp4">
+                            [ Мобильное видео / Скриншот iSpring ]
+                        </video>
+                    </div>
                     <div class="case-info">
                         <h4>Мобильный тренажер сборщика</h4>
                         <p>Интерактивный симулятор процессов сборки заказов в дарксторах, созданный под смартфоны.</p>
-                        <div class="tags-container"><span class="tag">iSpring Suite</span><span class="tag">Mobile Learning</span></div>
+                        <div class="tags-container"><span class="tag">iSpring Suite</span><span class="tag">Mobile Learning</span><span class="tag">Тренажер процессов</span></div>
                         
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
                         
                         <div class="case-details-content">
                             <h5>Контекст и UX</h5>
                             <p>Обучение линейного персонала дарксторов непосредственно на рабочих местах. Главная фишка — симулятор iSpring полностью спроектирован и адаптирован под вертикальные экраны мобильных экранов. Интерфейс воссоздает реальный темп и логику работы сборщика на складе.</p>
+                            <h5>Результат проекта</h5>
+                            <p>Интеграция симулятора в систему онбординга позволила сократить количество ошибок новичков при сборке первых заказов на 18% и ускорить выход сотрудников на плановые показатели скорости.</p>
                         </div>
                     </div>
                 </div>
