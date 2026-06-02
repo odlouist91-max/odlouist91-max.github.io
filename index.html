@@ -245,17 +245,18 @@
                 </div>
         
 
-                <!-- 3. Ситуативное лидерство (Tilda с обложкой) -->
-                <div class="case-card">
+                <!-- 3. Ситуативное лидерство (Tilda — Финальный UX дизайн) -->
+                <div class="case-card" style="position: relative;" onmouseenter="this.querySelector('.overlay').style.background='rgba(0,0,0,0.4)'; this.querySelector('.tilda-btn').style.transform='translateY(0)'; this.querySelector('.tilda-btn').style.opacity='1';" onmouseleave="this.querySelector('.overlay').style.background='rgba(0,0,0,0.15)'; this.querySelector('.tilda-btn').style.transform='translateY(10px)'; this.querySelector('.tilda-btn').style.opacity='0.9';">
                     <div class="case-media-container" style="position: relative;">
-                        <!-- Твоя картинка растянется на весь блок обложки -->
+                        <!-- Твоя шикарная обложка -->
                         <img src="tilda-cover.png" alt="Обложка Tilda" style="width: 100%; height: 100%; object-fit: cover;">
                         
-                        <!-- Красивое темное наложение и контрастная БЕЛАЯ кнопка поверх картинки -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
-                            <div style="font-weight: 700; font-size: 1.2rem; margin-bottom: 12px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Адаптивный лонгрид</div>
-                            <!-- Твоя ссылка на Тильду -->
-                            <a href="http://tnd.magnit.ru/page127615276.html" target="_blank" style="text-decoration: none; background: var(--brand-lime); color: var(--text-dark); padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Открыть проект ↗</a>
+                        <!-- Интерактивное наложение (Overlay) — теперь легкое затемнение 15% -->
+                        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.15); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 25px; transition: all 0.3s ease;">
+                            
+                            <!-- Контрастная белая кнопка, опущенная вниз -->
+                            <a href="https://твоя-ссылка-на-тильду.tilda.ws" target="_blank" class="tilda-btn" style="text-decoration: none; background: #ffffff; color: #111111; padding: 10px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #ffffff; transition: all 0.3s ease; transform: translateY(10px); opacity: 0.9;">Открыть проект ↗</a>
+                        
                         </div>
                     </div>
                     <div class="case-info">
@@ -267,9 +268,9 @@
                         
                         <div class="case-details-content">
                             <h5>Задача и реализация</h5>
-                            <p>Перевести комплексный теоретический block по ситуационному руководству в удобный цифровой формат. Сделан упор на чистую журнальную верстку, ритмику текста и удобство чтения как с десктопа, так и с мобильных устройств.</p>
+                            <p>Перевести комплексный теоретический блок по ситуационному руководству в удобный цифровой формат. Сделан упор на чистую журнальную верстку, ритмику текста и удобство чтения как с десктопа, так и с мобильных устройств.</p>
                             <h5>Методологические фишки</h5>
-                            <p>Разбивка контента по принципу микрообучения (Microlearning). Вместо монотонного лонгрида спроектирована system интерактивных переключателей, раскрывающихся списков и встроенных быстрых тестов для самопроверки.</p>
+                            <p>Разбивка контента по принципу микрообучения (Microlearning). Вместо монотонного лонгрида спроектирована система интерактивных переключателей, раскрывающихся списков и встроенных быстрых тестов для самопроверки.</p>
                         </div>
                     </div>
                 </div>
