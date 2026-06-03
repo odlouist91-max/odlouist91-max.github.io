@@ -109,6 +109,104 @@
             .hero-image { height: 380px; box-shadow: 12px 12px 0px var(--brand-blue); }
             .case-media-container { height: 240px; }
         }
+        /* --- СТИЛИ ДЛЯ ПОЛНОЭКРАННОГО ПРОСМОТРА КУРСОВ (MODAL) --- */
+.course-modal {
+    display: none; /* Изначально скрыто */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.85); /* Красивое темное размытие фона */
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 80vh;
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.modal-close {
+    position: absolute;
+    top: -45px; right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.modal-close:hover { color: var(--brand-lime); }
+
+/* --- ОБНОВЛЕННАЯ ПОДСКАЗКА НА КАРТОЧКАХ --- */
+.card-play-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 34, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.play-badge {
+    background: #ffffff;
+    border: 1px solid var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateY(0);
+}
+
+.case-card:hover .play-badge {
+    transform: scale(1.05);
+    background: var(--brand-lime);
+    border-color: var(--brand-lime);
+}
+
+.pulse-dot {
+    width: 8px; height: 8px;
+    background: var(--brand-blue);
+    border-radius: 50%;
+    position: relative;
+}
+.pulse-dot::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--brand-blue); border-radius: 50%;
+    animation: badgePulse 1.5s infinite ease-in-out;
+}
+@keyframes badgePulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(3); opacity: 0; }
+}
     </style>
 </head>
 <body>
@@ -184,9 +282,21 @@
             
             <div class="cases-grid">
 
+                <!-- 1. Lead Junior (С открытием в модальном окне) -->
                 <div class="case-card">
-                    <div class="case-media-container">
-                        <iframe src="lead-junior/story.html" class="case-iframe" allowfullscreen></iframe>
+                    <!-- Заменяем iframe на контейнер с подсказкой. При клике вызовется функция openCourse -->
+                    <div class="case-media-container" onclick="openCourse('lead-junior/story.html')" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); display: flex; align-items: center; justify-content: center;">
+                        
+                        <!-- Подсказка о кликабельности, которая горит всегда, а при наведении становится лаймовой -->
+                        <div class="card-play-overlay">
+                            <div class="play-badge">
+                                <div class="pulse-dot"></div>
+                                <span>Открыть на весь экран ↗</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Текстовая заглушка-заголовок, пока нет картинки-скриншота -->
+                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase;">Lead Junior</div>
                     </div>
                     <div class="case-info">
                         <h4>Курс-сериал «Lead Junior»</h4>
@@ -200,15 +310,22 @@
                             <p>Разработать программу управленческих навыков. Трудность темы лидерства в том, что в жизни людей сложно поделить на жесткие стереотипы, а готовых универсальных алгоритмов не существует.</p>
                             <h5>Решение и методология</h5>
                             <p>Создана система из лонгридов (теория) и симуляторов (практика). Мы прописали психологически достоверных сквозных персонажей. От модуля к модулю они раскрывались все глубже, поэтому пользователь учился взаимодействовать с ними на основе опыта прошлых серий, как в реальной жизни.</p>
-                            <h5>Моя роль</h5>
-                            <p>Проектирование программы, написание сценариев, подготовка материалов и финальная техническая сборка интерактивных тренажеров в Articulate.</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- 2. Курс-сказка (С открытием в модальном окне) -->
                 <div class="case-card">
-                    <div class="case-media-container">
-                        <iframe src="dog-story/story.html" class="case-iframe" allowfullscreen></iframe>
+                    <div class="case-media-container" onclick="openCourse('dog-story/story.html')" style="background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%); display: flex; align-items: center; justify-content: center;">
+                        
+                        <div class="card-play-overlay">
+                            <div class="play-badge">
+                                <div class="pulse-dot"></div>
+                                <span>Открыть на весь экран ↗</span>
+                            </div>
+                        </div>
+                        
+                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase;">Dog Story</div>
                     </div>
                     <div class="case-info">
                         <h4>Интерактивный курс-сказка</h4>
@@ -219,9 +336,7 @@
                         
                         <div class="case-details-content">
                             <h5>Контекст и сюжет</h5>
-                            <p>Главный герой видит объявление о том, что песик ищет дом, и отправляется за ним. По пути он встречает персонажей, нуждающихся в помощи: бабушку с тяжелыми сумками, детей из детского дома на ярмарке. Помогая им, герой (и учащийся) органично узнает о волонтерских фондах и механиках поддержки.</p>
-                            <h5>Техническое воплощение</h5>
-                            <p>Сложная разветвленная логика переходов в зависимости от выборов пользователя. Я полностью отвечала за сценарий, логику интерактивов, техническую сборку в Articulate и постановку детального ТЗ для дизайнера графики.</p>
+                            <p>Главный герой видит объявление о том, что песик ищет дом, и отправляется за ним. По пути он встречает персонажей, нуждающихся в помощи. Помогая им, герой органично узнает о волонтерских фондах и механиках поддержки.</p>
                         </div>
                     </div>
                 </div>
@@ -342,6 +457,39 @@
             const span = button.querySelector('span');
             if (card.classList.contains('active')) { span.textContent = '↑'; } else { span.textContent = '↓'; }
         }
+        <script>
+        // Старая функция для раскрытия деталей
+        function toggleCase(button) {
+            const card = button.closest('.case-card');
+            card.classList.toggle('active');
+            const span = button.querySelector('span');
+            if (card.classList.contains('active')) { span.textContent = '↑'; } else { span.textContent = '↓'; }
+        }
+
+        // Новые функции для модального окна
+        function openCourse(url) {
+            const modal = document.getElementById('courseModal');
+            const iframe = document.getElementById('modalIframe');
+            iframe.src = url; // Подставляем нужный курс
+            modal.style.display = 'flex'; // Показываем окно
+            document.body.style.overflow = 'hidden'; // Запрещаем скролл сайта на фоне
+        }
+
+        function closeCourse() {
+            const modal = document.getElementById('courseModal');
+            const iframe = document.getElementById('modalIframe');
+            iframe.src = ''; // Обнуляем ссылку, чтобы курс перестал играть на фоне
+            modal.style.display = 'none'; // Прячем окно
+            document.body.style.overflow = ''; // Возвращаем скролл сайта
+        }
     </script>
+    </script>
+    <!-- Всплывающее окно для полноэкранного прохождения курсов -->
+    <div class="course-modal" id="courseModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCourse()">Закрыть х</button>
+            <iframe src="" class="modal-iframe" id="modalIframe"></iframe>
+        </div>
+    </div>
 </body>
 </html>
