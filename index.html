@@ -49,7 +49,10 @@
         .hero-content h1 { font-size: 4.2rem; font-weight: 800; line-height: 1.05; letter-spacing: -0.05em; margin: 0 0 28px 0; }
         .highlight-word { background: var(--brand-lime); padding: 0 12px; border-radius: 12px; display: inline-block; transform: rotate(-1deg); }
         .hero-content p { font-size: 1.3rem; line-height: 1.6; color: #222; margin-bottom: 48px; max-width: 600px; }
-        
+        .social-links a { display: inline-block; margin-right: 15px; text-decoration: none; color: var(--text-dark); background: white; padding: 14px 28px; border-radius: 40px; font-size: 0.95rem; font-weight: 600; border: 1px solid var(--text-dark); }
+        .social-links a:hover { background: var(--text-dark); color: white; transform: scale(1.05); }
+        .hero-image { width: 100%; height: 480px; background: #e5e5e5; border-radius: var(--radius-large); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.9rem; border: 1px solid var(--text-dark); box-shadow: 20px 20px 0px var(--brand-blue); }
+
         /* Сферы */
         .bubble { position: absolute; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e2e8f0 15%, #64748b 45%, #1e293b 70%, #0f172a 90%, var(--brand-lime) 100%); box-shadow: inset -15px -15px 40px rgba(0, 34, 255, 0.25), inset 15px 15px 35px rgba(255, 255, 255, 0.7), 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 40px rgba(191, 255, 0, 0.15); z-index: 1; pointer-events: none; }
         .bubble::after { content: ''; position: absolute; top: 20%; left: 20%; width: 20%; height: 10%; background: rgba(255, 255, 255, 0.8); border-radius: 50%; transform: rotate(-30deg); filter: blur(0.5px); }
@@ -92,7 +95,7 @@
         .tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
         .tag { font-size: 0.75rem; font-weight: 600; padding: 6px 14px; background: #f1f1f1; border-radius: 30px; color: #444; }
         
-        .details-btn { background: none; border: 1px solid var(--text-dark); color: var(--text-dark); padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; width: max-content; position: relative; z-index: 6; }
+        .details-btn { background: none; border: 1px solid var(--text-dark); color: var(--text-dark); padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; width: max-content; }
         .details-btn:hover { background: var(--text-dark); color: white; }
         .case-details-content { display: none; padding-top: 30px; margin-top: 30px; border-top: 1px dashed var(--border-thin); }
         .case-details-content h5 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-blue); margin: 0 0 8px 0; font-weight: 700; }
@@ -106,105 +109,7 @@
             .hero-image { height: 380px; box-shadow: 12px 12px 0px var(--brand-blue); }
             .case-media-container { height: 240px; }
         }
-
-        /* --- СТИЛИ ДЛЯ ПОЛНОЭКРАННОГО ПРОСМОТРА КУРСОВ (MODAL) --- */
-        .course-modal {
-            display: none; 
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            background: rgba(15, 23, 42, 0.85); 
-            backdrop-filter: blur(8px);
-            z-index: 99999;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-        }
-
-        .modal-content {
-            position: relative;
-            width: 100%;
-            max-width: 1100px;
-            height: 80vh;
-            background: #000;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .modal-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -45px; right: 0;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        .modal-close:hover { color: var(--brand-lime); }
-
-        /* --- ОБНОВЛЕННАЯ ПОДСКАЗКА НА КАРТОЧКАХ --- */
-        .card-play-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 34, 255, 0.02);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 5;
-        }
-
-        .play-badge {
-            background: #ffffff;
-            border: 1px solid var(--text-dark);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transform: translateY(0);
-        }
-
-        .case-card:hover .play-badge {
-            transform: scale(1.05);
-            background: var(--brand-lime);
-            border-color: var(--brand-lime);
-        }
-
-        .pulse-dot {
-            width: 8px; height: 8px;
-            background: var(--brand-blue);
-            border-radius: 50%;
-            position: relative;
-        }
-        .pulse-dot::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--brand-blue); border-radius: 50%;
-            animation: badgePulse 1.5s infinite ease-in-out;
-        }
-        @keyframes badgePulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(3); opacity: 0; }
-        }
+        
     </style>
 </head>
 <body>
@@ -218,7 +123,7 @@
                 <a href="#skills">Экспертиза</a>
                 <a href="#courses">Примеры курсов</a>
                 <a href="#systems">Системные проекты</a>
-                <a href="https://t.me/omonyka" target="_blank" class="nav-cta">Telegram</a>
+                <a href="https://t.me/omonyka" class="nav-cta">Telegram</a>
             </div>
         </nav>
 
@@ -228,19 +133,14 @@
             <div class="hero-content">
                 <h1>Привет!<br>Я <span class="highlight-word">Моника.</span></h1>
                 <p>Я занимаюсь дизайном и разработкой интерактивных курсов, лонгридов и сложных образовательных систем. Сочетаю глубокую методологию обучения с чистым UI/UX дизайном и автоматизацией на базе корпоративных LMS.</p>
-                
-                <div class="social-links" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://t.me/omonyka" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-dark); background: white; padding: 14px 28px; border-radius: 40px; font-size: 0.95rem; font-weight: 600; border: 1px solid var(--text-dark);">
-                        <span>Написать в Telegram</span> ↗
-                    </a>
-                    <a href="mailto:odlouist91@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: white; background: var(--text-dark); padding: 14px 28px; border-radius: 40px; font-size: 0.95rem; font-weight: 600; border: 1px solid var(--text-dark);">
-                        <span>Написать на почту</span> ✉️
-                    </a>
+                <div class="social-links">
+                    <a href="https://t.me/omonyka" target="_blank">Написать мне</a>
                 </div>
             </div>
             <div class="hero-image" style="background: none; padding: 0;">
-                <img src="my-photo.png" alt="Моника Андреасян" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
+       <!-- ЕСЛИ ФОТО В ФОРМАТЕ .PNG, ЗАМЕНИ НА my-photo.png -->
+       <img src="my-photo.png" alt="Моника Андреасян" style="width: 100%; height: 100%; object-fit: cover;">
+   </div>
         </section>
 
         <section style="padding: 60px 0 40px 0; overflow: hidden; width: 100%;">
@@ -286,47 +186,43 @@
             <div class="cases-grid">
 
                 <div class="case-card">
-                    <div class="case-media-container" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); display: flex; align-items: center; justify-content: center; position: relative;">
-                        <div class="card-play-overlay" onclick="openCourse('lead-junior/story.html')">
-                            <div class="play-badge">
-                                <div class="pulse-dot"></div>
-                                <span>Открыть на весь экран ↗</span>
-                            </div>
-                        </div>
-                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase; pointer-events: none;">Lead Junior</div>
+                    <div class="case-media-container">
+                        <iframe src="lead-junior/story.html" class="case-iframe" allowfullscreen></iframe>
                     </div>
                     <div class="case-info">
                         <h4>Курс-сериал «Lead Junior»</h4>
                         <p>Комплексная модульная программа для молодых руководителей со сквозным сюжетом.</p>
                         <div class="tags-container"><span class="tag">Articulate Storyline</span><span class="tag">Полный цикл</span></div>
+                        
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
                         <div class="case-details-content">
                             <h5>Контекст и задача</h5>
                             <p>Разработать программу управленческих навыков. Трудность темы лидерства в том, что в жизни людей сложно поделить на жесткие стереотипы, а готовых универсальных алгоритмов не существует.</p>
                             <h5>Решение и методология</h5>
                             <p>Создана система из лонгридов (теория) и симуляторов (практика). Мы прописали психологически достоверных сквозных персонажей. От модуля к модулю они раскрывались все глубже, поэтому пользователь учился взаимодействовать с ними на основе опыта прошлых серий, как в реальной жизни.</p>
+                            <h5>Моя роль</h5>
+                            <p>Проектирование программы, написание сценариев, подготовка материалов и финальная техническая сборка интерактивных тренажеров в Articulate.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="case-card">
-                    <div class="case-media-container" style="background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%); display: flex; align-items: center; justify-content: center; position: relative;">
-                        <div class="card-play-overlay" onclick="openCourse('dog-story/story.html')">
-                            <div class="play-badge">
-                                <div class="pulse-dot"></div>
-                                <span>Открыть на весь экран ↗</span>
-                            </div>
-                        </div>
-                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase; pointer-events: none;">Dog Story</div>
+                    <div class="case-media-container">
+                        <iframe src="dog-story/story.html" class="case-iframe" allowfullscreen></iframe>
                     </div>
                     <div class="case-info">
                         <h4>Интерактивный курс-сказка</h4>
                         <p>Эмоциональный геймифицированный курс по волонтерству на основе разветвленного сторителлинга.</p>
                         <div class="tags-container"><span class="tag">Articulate Storyline</span><span class="tag">Сценарий & Сборка</span></div>
+                        
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
+                        
                         <div class="case-details-content">
                             <h5>Контекст и сюжет</h5>
-                            <p>Главный герой видит объявление о том, что песик ищет дом, и отправляется за ним. По пути он встречает персонажей, нуждающихся в помощи. Помогая им, герой органично узнает о волонтерских фондах и механиках поддержки.</p>
+                            <p>Главный герой видит объявление о том, что песик ищет дом, и отправляется за ним. По пути он встречает персонажей, нуждающихся в помощи: бабушку с тяжелыми сумками, детей из детского дома на ярмарке. Помогая им, герой (и учащийся) органично узнает о волонтерских фондах и механиках поддержки.</p>
+                            <h5>Техническое воплощение</h5>
+                            <p>Сложная разветвленная логика переходов в зависимости от выборов пользователя. Я полностью отвечала за сценарий, логику интерактивов, техническую сборку в Articulate и постановку детального ТЗ для дизайнера графики.</p>
                         </div>
                     </div>
                 </div>
@@ -377,7 +273,7 @@
             </div>
         </section>
 
-        <section class="cases-section" id="systems">
+       <section class="cases-section" id="systems">
             <div class="section-title">Проектирование систем</div>
             <div class="section-subtitle-text">L&D architecture, кадровый резерв и автоматизация</div>
             
@@ -385,8 +281,11 @@
 
                 <div class="case-card" style="width: 100%;">
                     <div class="case-media-container" style="display:flex; flex-direction: column; align-items:center; justify-content:center; height: 240px; background: var(--brand-blue); padding: 30px; text-align: center; position: relative; overflow: hidden;">
+                        
                         <div style="position: absolute; width: 100%; height: 100%; opacity: 0.2; background: radial-gradient(circle, #ffffff 0%, transparent 70%);"></div>
+                        
                         <div style="font-family: monospace; font-size: 0.9rem; color: var(--brand-lime); border: 1px solid var(--brand-lime); padding: 6px 14px; border-radius: 8px; margin-bottom: 16px; background: rgba(191, 255, 0, 0.1); z-index: 2; letter-spacing: 2px; font-weight: 700;">[ LMS_ARCHITECTURE ]</div>
+                        
                         <div style="font-weight: 800; font-size: 1.8rem; margin-bottom: 8px; color: #ffffff; letter-spacing: -0.03em; z-index: 2;">Автоматизация воронки «Наставничество»</div>
                         <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.85); margin: 0; max-width: 550px; z-index: 2; line-height: 1.5; font-weight: 500;">Перевод ручного хаоса отбора наставников в автоматический цифровой трек в LMS WebSoft</p>
                     </div>
@@ -404,12 +303,15 @@
 
                 <div class="case-card" style="width: 100%;">
                     <div class="case-media-container" style="display:flex; flex-direction: column; align-items:center; justify-content:center; height: 240px; background: var(--brand-blue); padding: 30px; text-align: center; position: relative; overflow: hidden;">
+                        
                         <div style="position: absolute; width: 100%; height: 100%; opacity: 0.2; background: radial-gradient(circle, #ffffff 0%, transparent 70%);"></div>
+                        
                         <div style="width: 44px; height: 44px; border: 2px dashed rgba(255,255,255,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; position: relative; z-index: 2;">
                             <div style="width: 24px; height: 24px; border: 2px solid var(--brand-lime); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                                 <div style="width: 6px; height: 6px; background: #ffffff; border-radius: 50%;"></div>
                             </div>
                         </div>
+                        
                         <div style="font-weight: 800; font-size: 1.8rem; margin-bottom: 8px; color: #ffffff; letter-spacing: -0.03em; z-index: 2;">Методология Кадрового Резерва</div>
                         <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.85); margin: 0; max-width: 550px; z-index: 2; line-height: 1.5; font-weight: 500;">Проектирование карьерных треков, матриц компетенций и сфокусированных программ развития</p>
                     </div>
@@ -427,44 +329,19 @@
 
             </div>
         </section>
-    </div>
 
-    <div class="course-modal" id="courseModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeCourse()">Закрыть х</button>
-            <iframe src="" class="modal-iframe" id="modalIframe"></iframe>
-        </div>
+            </div>
+        </section>
+            </div>
+        </section>
     </div>
 
     <script>
-        // Функция для раскрытия деталей кейса
         function toggleCase(button) {
             const card = button.closest('.case-card');
             card.classList.toggle('active');
             const span = button.querySelector('span');
-            if (card.classList.contains('active')) { 
-                span.textContent = '↑'; 
-            } else { 
-                span.textContent = '↓'; 
-            }
-        }
-
-        // Функция открытия курса на весь экран
-        function openCourse(url) {
-            const modal = document.getElementById('courseModal');
-            const iframe = document.getElementById('modalIframe');
-            iframe.src = url; 
-            modal.style.display = 'flex'; 
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        // Функция закрытия курса
-        function closeCourse() {
-            const modal = document.getElementById('courseModal');
-            const iframe = document.getElementById('modalIframe');
-            iframe.src = ''; 
-            modal.style.display = 'none'; 
-            document.body.style.overflow = ''; 
+            if (card.classList.contains('active')) { span.textContent = '↑'; } else { span.textContent = '↓'; }
         }
     </script>
 </body>
