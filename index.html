@@ -282,61 +282,50 @@
             
             <div class="cases-grid">
 
-                <!-- 1. Lead Junior (С открытием в модальном окне) -->
                 <div class="case-card">
-                    <!-- Заменяем iframe на контейнер с подсказкой. При клике вызовется функция openCourse -->
-                    <div class="case-media-container" onclick="openCourse('lead-junior/story.html')" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); display: flex; align-items: center; justify-content: center;">
+                    <div class="case-media-container" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); display: flex; align-items: center; justify-content: center; position: relative;">
                         
-                        <!-- Подсказка о кликабельности, которая горит всегда, а при наведении становится лаймовой -->
-                        <div class="card-play-overlay">
+                        <div class="card-play-overlay" onclick="openCourse('lead-junior/story.html')">
                             <div class="play-badge">
                                 <div class="pulse-dot"></div>
                                 <span>Открыть на весь экран ↗</span>
                             </div>
                         </div>
                         
-                        <!-- Текстовая заглушка-заголовок, пока нет картинки-скриншота -->
-                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase;">Lead Junior</div>
+                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase; pointer-events: none;">Lead Junior</div>
                     </div>
                     <div class="case-info">
                         <h4>Курс-сериал «Lead Junior»</h4>
                         <p>Комплексная модульная программа для молодых руководителей со сквозным сюжетом.</p>
                         <div class="tags-container"><span class="tag">Articulate Storyline</span><span class="tag">Полный цикл</span></div>
-                        
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
-                        
                         <div class="case-details-content">
                             <h5>Контекст и задача</h5>
-                            <p>Разработать программу управленческих навыков. Трудность темы лидерства в том, что в жизни людей сложно поделить на жесткие стереотипы, а готовых универсальных алгоритмов не существует.</p>
-                            <h5>Решение и методология</h5>
-                            <p>Создана система из лонгридов (теория) и симуляторов (практика). Мы прописали психологически достоверных сквозных персонажей. От модуля к модулю они раскрывались все глубже, поэтому пользователь учился взаимодействовать с ними на основе опыта прошлых серий, как в реальной жизни.</p>
+                            <p>Разработать программу управленческих навыков...</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Курс-сказка (С открытием в модальном окне) -->
                 <div class="case-card">
-                    <div class="case-media-container" onclick="openCourse('dog-story/story.html')" style="background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%); display: flex; align-items: center; justify-content: center;">
+                    <div class="case-media-container" style="background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%); display: flex; align-items: center; justify-content: center; position: relative;">
                         
-                        <div class="card-play-overlay">
+                        <div class="card-play-overlay" onclick="openCourse('dog-story/story.html')">
                             <div class="play-badge">
                                 <div class="pulse-dot"></div>
                                 <span>Открыть на весь экран ↗</span>
                             </div>
                         </div>
                         
-                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase;">Dog Story</div>
+                        <div style="color: rgba(255,255,255,0.2); font-weight: 800; font-size: 2rem; letter-spacing: -0.05em; text-transform: uppercase; pointer-events: none;">Dog Story</div>
                     </div>
                     <div class="case-info">
                         <h4>Интерактивный курс-сказка</h4>
                         <p>Эмоциональный геймифицированный курс по волонтерству на основе разветвленного сторителлинга.</p>
                         <div class="tags-container"><span class="tag">Articulate Storyline</span><span class="tag">Сценарий & Сборка</span></div>
-                        
                         <button class="details-btn" onclick="toggleCase(this)">Детали кейса <span>↓</span></button>
-                        
                         <div class="case-details-content">
                             <h5>Контекст и сюжет</h5>
-                            <p>Главный герой видит объявление о том, что песик ищет дом, и отправляется за ним. По пути он встречает персонажей, нуждающихся в помощи. Помогая им, герой органично узнает о волонтерских фондах и механиках поддержки.</p>
+                            <p>Главный герой видит объявление о том, что песик ищет дом...</p>
                         </div>
                     </div>
                 </div>
